@@ -2,18 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- 关键：让手机按设备宽度显示，而不是缩成很小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Dima!</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f7f3ff;
+        }
+
+        .page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px 20px;
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin: 0 0 8px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 8px 0;
+        }
+
+        .ua {
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        .audio-wrap {
+            margin-top: 18px;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+        }
+
+        .tip {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #666666;
+        }
+    </style>
 </head>
 <body>
-    <h2>Happy Birthday Dima! 🎂🥳</h2>
+    <div class="page">
+        <div class="card">
+            <h1>Happy Birthday Dima! 🎂🥳</h1>
+            <p>Here is a special birthday message for you.</p>
 
-    <p><strong>З днем народження, Діма!</strong></p>
+            <p class="ua">З днем народження, Діма!</p>
 
-    <p>Here is a special birthday message for you:</p>
+            <div class="audio-wrap">
+                <audio controls autoplay>
+                    <source src="audio.m4a" type="audio/mp4">
+                    Your browser does not support audio playback.
+                </audio>
+            </div>
 
-    <audio controls autoplay>
-        <source src="happy-birthday.m4a" type="audio/mp4">
-        Your browser does not support audio playback.
-    </audio>
+            <p class="tip">If the audio does not start automatically, please tap the play button.</p>
+        </div>
+    </div>
 </body>
 </html>
