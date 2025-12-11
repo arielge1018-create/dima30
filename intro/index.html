@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- 关键：让手机按设备宽度显示，而不是缩成很小 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta nameviewport="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Dima!</title>
     <style>
         * {
@@ -14,7 +13,37 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #f7f3ff;
+
+            /* 💜 渐变背景：深紫水晶 (#6B3BFF) → 丁香浅紫 (#D6B6FF) */
+            background: linear-gradient(160deg, #6B3BFF 0%, #D6B6FF 100%);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* ✨ 星光粒子效果 */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 3s infinite ease-in-out;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 0.9; transform: scale(1); }
         }
 
         .page {
@@ -23,67 +52,81 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
+            position: relative;
+            z-index: 2;
         }
 
         .card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 24px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 18px;
+            padding: 26px 20px;
             max-width: 420px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
 
         h1 {
-            font-size: 24px;
-            margin: 0 0 8px;
+            font-size: 26px;
+            margin-bottom: 12px;
         }
 
         p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 8px 0;
+            font-size: 17px;
+            line-height: 1.6;
         }
 
         .ua {
-            margin-top: 12px;
+            margin-top: 14px;
             font-weight: 600;
-        }
-
-        .audio-wrap {
-            margin-top: 18px;
+            font-size: 18px;
         }
 
         audio {
             width: 100%;
+            margin-top: 18px;
             outline: none;
         }
 
         .tip {
-            margin-top: 10px;
+            margin-top: 12px;
             font-size: 12px;
-            color: #666666;
+            color: #555;
         }
     </style>
 </head>
 <body>
+
+    <!-- ✨ 多颗闪亮星光 -->
+    <div class="stars">
+        <div class="star" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+        <div class="star" style="top: 30%; left: 70%; animation-delay: 0.5s;"></div>
+        <div class="star" style="top: 60%; left: 15%; animation-delay: 1s;"></div>
+        <div class="star" style="top: 80%; left: 50%; animation-delay: 1.5s;"></div>
+        <div class="star" style="top: 40%; left: 40%; animation-delay: 2s;"></div>
+        <div class="star" style="top: 20%; left: 85%; animation-delay: 2.5s;"></div>
+    </div>
+
     <div class="page">
         <div class="card">
             <h1>Happy Birthday Dima! 🎂🥳</h1>
+
+            <!-- 乌克兰语祝福 -->
             <p class="ua">З днем народження, Діма!</p>
 
+            <!-- ✨ 英文提示句（已移到乌克兰语下面） -->
             <p>Here is a special birthday message for you.</p>
 
-            <div class="audio-wrap">
-                <audio controls autoplay>
-                    <source src="audio.m4a" type="audio/mp4">
-                    Your browser does not support audio playback.
-                </audio>
-            </div>
+            <!-- 播放器 -->
+            <audio controls autoplay>
+                <source src="audio.m4a" type="audio/mp4">
+                Your browser does not support audio playback.
+            </audio>
 
             <p class="tip">If the audio does not start automatically, please tap the play button.</p>
         </div>
     </div>
+
 </body>
 </html>
