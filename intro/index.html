@@ -14,8 +14,8 @@
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-            /* 💜 更纯的紫色渐变（不偏蓝） */
-            background: linear-gradient(180deg, #6B3BFF 0%, #D6B6FF 100%);
+            /* 💜 从左上浅紫 (#D6B6FF) 渐变到右下偏红深紫 (#7A2BF2) */
+            background: linear-gradient(to bottom right, #D6B6FF 0%, #7A2BF2 100%);
         }
 
         .page {
@@ -71,13 +71,10 @@
         <div class="card">
             <h1>Happy Birthday Dima! 🎂🥳</h1>
 
-            <!-- 乌克兰语祝福 -->
             <p class="ua">З днем народження, Діма!</p>
 
-            <!-- 英文提示句 -->
             <p>Here is a special birthday message for you.</p>
 
-            <!-- 播放器（恢复之前版本样式） -->
             <audio controls autoplay>
                 <source src="audio.m4a" type="audio/mp4">
                 Your browser does not support audio playback.
