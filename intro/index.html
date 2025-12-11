@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta nameviewport="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Dima!</title>
     <style>
         * {
@@ -14,36 +14,8 @@
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-            /* 💜 渐变背景：深紫水晶 (#6B3BFF) → 丁香浅紫 (#D6B6FF) */
-            background: linear-gradient(160deg, #6B3BFF 0%, #D6B6FF 100%);
-            overflow: hidden;
-            position: relative;
-        }
-
-        /* ✨ 星光粒子效果 */
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .star {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            animation: sparkle 3s infinite ease-in-out;
-        }
-
-        @keyframes sparkle {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 0.9; transform: scale(1); }
+            /* 💜 更纯的紫色渐变（不偏蓝） */
+            background: linear-gradient(180deg, #6B3BFF 0%, #D6B6FF 100%);
         }
 
         .page {
@@ -52,13 +24,11 @@
             align-items: center;
             justify-content: center;
             padding: 16px;
-            position: relative;
-            z-index: 2;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
             border-radius: 18px;
             padding: 26px 20px;
             max-width: 420px;
@@ -86,7 +56,6 @@
         audio {
             width: 100%;
             margin-top: 18px;
-            outline: none;
         }
 
         .tip {
@@ -98,16 +67,6 @@
 </head>
 <body>
 
-    <!-- ✨ 多颗闪亮星光 -->
-    <div class="stars">
-        <div class="star" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
-        <div class="star" style="top: 30%; left: 70%; animation-delay: 0.5s;"></div>
-        <div class="star" style="top: 60%; left: 15%; animation-delay: 1s;"></div>
-        <div class="star" style="top: 80%; left: 50%; animation-delay: 1.5s;"></div>
-        <div class="star" style="top: 40%; left: 40%; animation-delay: 2s;"></div>
-        <div class="star" style="top: 20%; left: 85%; animation-delay: 2.5s;"></div>
-    </div>
-
     <div class="page">
         <div class="card">
             <h1>Happy Birthday Dima! 🎂🥳</h1>
@@ -115,10 +74,10 @@
             <!-- 乌克兰语祝福 -->
             <p class="ua">З днем народження, Діма!</p>
 
-            <!-- ✨ 英文提示句（已移到乌克兰语下面） -->
+            <!-- 英文提示句 -->
             <p>Here is a special birthday message for you.</p>
 
-            <!-- 播放器 -->
+            <!-- 播放器（恢复之前版本样式） -->
             <audio controls autoplay>
                 <source src="audio.m4a" type="audio/mp4">
                 Your browser does not support audio playback.
