@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Dima!</title>
+  <title>1 Year Old!</title>
   <style>
     * { box-sizing: border-box; }
     body{
@@ -64,56 +64,18 @@
 <body>
   <div class="page">
     <div class="card">
-      <h1>1 year old!</h1>
+      <h1>You are 1 year old!</h1>
 
       <img src="pic.png" alt="Photo" class="photo">
 
-      <audio id="player" controls preload="auto" autoplay>
-        <source src="audio.m4a" type="audio/mp4">
-        Your browser does not support audio playback.
-      </audio>
+     <audio controls autoplay>
+                <source src="audio.m4a" type="audio/mp4">
+                Your browser does not support audio playback.
+            </audio>
 
-      <!-- 兜底按钮：自动播放失败时，用户点一下必定能播 -->
-      <button class="btn" id="playBtn">Tap to Play ▶︎</button>
-
-      <div class="hint" id="hint"></div>
+            <p class="tip">Tap the play button to start the audio.</p>
+        </div>
     </div>
-  </div>
 
-  <script>
-    const audio = document.getElementById('player');
-    const btn = document.getElementById('playBtn');
-    const hint = document.getElementById('hint');
-
-    async function tryPlay() {
-      try {
-        // 某些安卓允许 muted autoplay，通过后再取消静音
-        audio.muted = true;
-        await audio.play();
-        audio.muted = false;
-
-        hint.textContent = ""; // 成功就不提示
-      } catch (e) {
-        // 自动播放被拦截很常见：给出提示即可
-        hint.textContent = "Auto-play may be blocked by your browser. Please tap the button to play.";
-      }
-    }
-
-    btn.addEventListener('click', async () => {
-      try {
-        audio.muted = false;
-        await audio.play();
-        hint.textContent = "";
-      } catch (e) {
-        hint.textContent = "Please press play on the audio player.";
-      }
-    });
-
-    // 页面加载后尝试自动播放
-    window.addEventListener('load', () => {
-      tryPlay();
-    });
-  </script>
 </body>
 </html>
-
